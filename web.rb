@@ -1,5 +1,5 @@
 # see https://github.com/mu-semtech/mu-ruby-template for more info
-get '/' do
+post '/' do
   content_type 'application/json'
   job_uuid = generate_uuid()
   update <<QUERY
