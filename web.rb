@@ -7,9 +7,10 @@ post '/' do
       GRAPH <http://mu.semte.ch/application> {
         <http://mu.semte.ch/vocabularies/ext/mock-jobrunner/resources/#{job_uuid}>
           a <http://mu.semte.ch/vocabularies/ext/jobrunner/Job>;
-          <http://mu.semte.ch/vocabularies/mu/uuid> #{job_uuid.sparql_escape};
-          <http://mu.semte.ch/vocubalaries/ext/jobrunner/status>
-            <http://mu.semte.ch/vocubalaries/ext/jobrunner/Running>.
+          <http://mu.semte.ch/vocabularies/core/uuid> #{job_uuid.sparql_escape};
+          <http://mu.semte.ch/vocabularies/ext/jobrunner/status>
+            <http://mu.semte.ch/vocabularies/ext/jobrunner/Running>;
+          <http://purl.org/dc/terms/title> "Mock job".
       }
     }
 QUERY
@@ -18,15 +19,15 @@ QUERY
     DELETE {
       GRAPH <http://mu.semte.ch/application> {
         <http://mu.semte.ch/vocabularies/ext/mock-jobrunner/resources/#{job_uuid}>
-          <http://mu.semte.ch/vocubalaries/ext/jobrunner/status>
-            <http://mu.semte.ch/vocubalaries/ext/jobrunner/Running>.
+          <http://mu.semte.ch/vocabularies/ext/jobrunner/status>
+            <http://mu.semte.ch/vocabularies/ext/jobrunner/Running>.
       }
     }
     INSERT {
       GRAPH <http://mu.semte.ch/application> {
         <http://mu.semte.ch/vocabularies/ext/mock-jobrunner/resources/#{job_uuid}>
-          <http://mu.semte.ch/vocubalaries/ext/jobrunner/status>
-            <http://mu.semte.ch/vocubalaries/ext/jobrunner/Completed>.
+          <http://mu.semte.ch/vocabularies/ext/jobrunner/status>
+            <http://mu.semte.ch/vocabularies/ext/jobrunner/Completed>.
       }
     }
 QUERY
