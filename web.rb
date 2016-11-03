@@ -8,6 +8,7 @@ post '/' do
         <http://mu.semte.ch/vocabularies/ext/mock-jobrunner/resources/#{job_uuid}>
           a <http://mu.semte.ch/vocabularies/ext/jobrunner/Job>;
           <http://mu.semte.ch/vocabularies/core/uuid> #{job_uuid.sparql_escape};
+          <http://mu.semte.ch/vocabularies/ext/jobrunner/startedAt> #{Time.now.sparql_escape};
           <http://mu.semte.ch/vocabularies/ext/jobrunner/status>
             <http://mu.semte.ch/vocabularies/ext/jobrunner/Running>;
           <http://purl.org/dc/terms/title> "Mock job".
