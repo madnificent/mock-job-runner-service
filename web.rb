@@ -31,8 +31,5 @@ QUERY
     }
 QUERY
 
-  { data: { attributes: {
-              id: job_uuid,
-              type: 'jobs'
-            } } }.to_json
+  { data: { id: job_uuid, type: 'jobs' } }.to_json
 end
